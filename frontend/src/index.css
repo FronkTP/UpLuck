@@ -1,9 +1,9 @@
 :root {
-    --color-lighter: #fdf0d5;
-    --color-light: #669bbc;
-    --color-dark: #003049;
-    --color-accent-dark: #c1121f;
-    --color-accent-darker: #780000;
+    --color-light: #F8F8F8;
+    --color-primary: #4F5D75;
+    --color-primary-dark: #2D3142;
+    --color-accent: #ffd8be;
+    --color-accent-dark: #EF8354;
 }
 
 *,
@@ -20,8 +20,9 @@ a {
 }
 
 .hero-section {
+    height: 100vh;
     padding: 2em 5em;
-    color: var(--color-dark);
+    background-color: var(--color-light);
     display: flex;
     align-items: center;
     gap: 5vw;
@@ -30,23 +31,25 @@ a {
 header h1 {
     margin-bottom: 0.25em;
     font-size: 3.5rem;
+    color: var(--color-primary-dark);
 }
 
-.hero__div p {
+.hero__text p {
     font-size: 1.5rem;
+    color: var(--color-primary);
 }
 
 .hero__image {
-    width: 25%;
-    height: 25%;
+    width: 40%;
+    height: 40%;
 }
 
 .hero__btn {
     margin: 1.5rem 0;
     padding: 15px 30px;
     font-size: 1rem;
-    color: white;
-    background-color: var(--color-dark);
+    color: var(--color-primary-dark);
+    background-color: var(--color-accent-dark);
     border: none;
     border-radius: 20px;
     cursor: pointer;
