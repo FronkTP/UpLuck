@@ -19,17 +19,39 @@ a {
     text-decoration: none;
 }
 
+/* Navigation section */
+
+nav {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 4em;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+/* Hero section */
+
 .hero-section {
-    height: 100vh;
-    padding: 2em 5em;
+    height: 90vh;
+    padding: 2em 4em;
     background-color: var(--color-light);
     display: flex;
     align-items: center;
     gap: 5vw;
 }
 
+.hero__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5em;
+}
+
 header h1 {
-    margin-bottom: 0.25em;
     font-size: 3.5rem;
     color: var(--color-primary-dark);
 }
@@ -40,14 +62,14 @@ header h1 {
 }
 
 .hero__image {
-    width: 40%;
-    height: 40%;
+    width: 60%;
+    height: 60%;
 }
 
 .hero__btn {
-    margin: 1.5rem 0;
+    display: inline;
     padding: 15px 30px;
-    font-size: 1rem;
+    font-size: 1.125rem;
     color: var(--color-primary-dark);
     background-color: var(--color-accent-dark);
     border: none;
