@@ -19,8 +19,6 @@ a {
     text-decoration: none;
 }
 
-<<<<<<< Updated upstream
-=======
 button {
     color: var(--color-primary-dark);
     background-color: var(--color-accent-dark);
@@ -45,7 +43,6 @@ nav ul li {
 
 /* Hero section */
 
->>>>>>> Stashed changes
 .hero-section {
     height: 100vh;
     padding: 2em 5em;
@@ -72,20 +69,9 @@ header h1 {
 }
 
 .hero__btn {
-<<<<<<< Updated upstream
-    margin: 1.5rem 0;
-    padding: 15px 30px;
-    font-size: 1rem;
-    color: var(--color-primary-dark);
-    background-color: var(--color-accent-dark);
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-=======
     display: inline;
     padding: 0.825em 1.65em;
     font-size: 1.125rem;
->>>>>>> Stashed changes
 }
 
 /* Card slider section */
