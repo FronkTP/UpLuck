@@ -1,13 +1,16 @@
-import { useState } from 'react'
-import Header from "../components/Header"
-import SimpleSlider from "../components/SimpleSlider"
+import {Routes, Route} from 'react-router-dom'
+import Home from '../pages/Home'
+import Aboutus from '../pages/Aboutus'
 
 function App() {
   
   return (
     <>
-        <Header/>
-        <SimpleSlider/>
+      <Routes>
+        <Route path = '/' element={<Home />}/>
+        <Route path = '/about-us' element={<Aboutus />}/>
+      
+      </Routes>
     </>
   )
 }
