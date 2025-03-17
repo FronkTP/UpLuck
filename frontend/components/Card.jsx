@@ -11,7 +11,6 @@ export default function Card(){
                         <h2 className="card_title">Title here</h2>
                         <p className="card_desc">desc here</p>
                     </div>
-                    <button className="card_btn">Read More</button>
                 </div>
             </div>
         </div>
