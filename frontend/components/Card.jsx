@@ -3,17 +3,17 @@ import nikon from "../src/images/surprised_nikon.png"
 export default function Card(){
     return(
         <>
-        <div className="main_card">
-        <div className="margin_card">
-        <div className="info_card">
-        <img src={nikon} className ="img_card"/>
-        <div className="text_card">
-        <p className = "title_card">Title here</p>
-        <p className = "desc_card">desc here</p>
-        </div>
-        <button className = "button_card">Read More</button>
-        </div>
-        </div>
+        <div className="card_main">
+            <div className="card_margin">
+                <img src={nikon} className="card_img"/>
+                <div className="card_info">
+                    <div className="card_text">
+                        <h2 className="card_title">Title here</h2>
+                        <p className="card_desc">desc here</p>
+                    </div>
+                    <button className="card_btn">Read More</button>
+                </div>
+            </div>
         </div>
         
         </>
