@@ -6,10 +6,12 @@ import ShirtColor from "../components/ShirtColor";
 import LuckyItem from "../components/LuckyItem";
 import SacredMap from "../components/SacredMap";
 import FortuneNavbar from "../components/FortuneNavbar";
+import { useRef } from "react"
 
 export default function Home() {
     const [selected, setSelected] = useState('dailyhoroscope')
     const [selectedCard, setSelectedCard] = useState(null)
+    const targetRef = useRef(null)
 
     const renderComponent = () => {
         switch (selected) {
@@ -28,11 +30,12 @@ export default function Home() {
 
     return (
         <>
-            <Header />
+            <Header target = {targetRef}/>
             <SimpleSlider
                 onSelect={setSelected}
                 selectedCard={selectedCard}
                 setSelectedCard={setSelectedCard}
+                target={targetRef}
             />
             <FortuneNavbar onSelect={setSelected} selected={selected} />
             {renderComponent()}

@@ -1,11 +1,11 @@
 import Navbar from "./Navbar.jsx"
 import Hero from "./Hero.jsx"
 
-export default function Header() {
+export default function Header({target}) {
     return (
         <>
-            <Navbar/>
-            <Hero/>
+            <Navbar />
+            <Hero target = {target}/>
         </>
     )
 }

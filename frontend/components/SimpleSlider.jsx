@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Card from "../components/Card";
 
-export default function SimpleSlider({ onSelect, selectedCard, setSelectedCard }) {
+export default function SimpleSlider({ onSelect, selectedCard, setSelectedCard,target }) {
   const settings = {
       dots: true,
       infinite: true,
@@ -20,7 +20,7 @@ export default function SimpleSlider({ onSelect, selectedCard, setSelectedCard }
   ];
 
   return (
-      <div className="slider">
+      <div ref ={target} className="slider">
           <Slider {...settings}>
               {cards.map((card) => (
                   <div
