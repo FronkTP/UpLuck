@@ -5,28 +5,7 @@ import Card from "../components/Card";
 import { useRef } from 'react';
 
 export default function SimpleSlider({ onSelect, selectedCard, setSelectedCard,target }) {
-
   const slider = useRef(null);
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "black" }}
-        onClick={onClick}
-      />
-    );
-  }
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "green" }}
-        onClick={onClick}
-      />
-    );
-  }
  
   const settings = {
     className: "center",
