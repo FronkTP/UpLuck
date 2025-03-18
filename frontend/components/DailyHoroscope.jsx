@@ -1,18 +1,13 @@
-
 import React, { useState, useEffect } from 'react';
+
 export default function DailyHoroscope() {
-        const [date, setDate] = useState('');
-    
-        useEffect(() => {
-          // Get the current date
-          const today = new Date();
-          
-          // Format the date as you need (e.g., YYYY-MM-DD)
-          const formattedDate = today.toLocaleDateString(); // You can change this format
-          setDate(formattedDate);
-        }, []); // Empty dependency array to run once when the component mounts
+    const [date, setDate] = useState('');
 
-
+    useEffect(() => {
+        const today = new Date();
+        const formattedDate = today.toLocaleDateString('en-GB');
+        setDate(formattedDate);
+    }, []);
 
     return (
         <div>

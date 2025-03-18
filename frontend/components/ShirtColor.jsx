@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
+
 export default function ShirtColor() {
-
     const [date, setDate] = useState('');
-
+        
     useEffect(() => {
-      // Get the current date
-      const today = new Date();
-      
-      // Format the date as you need (e.g., YYYY-MM-DD)
-      const formattedDate = today.toLocaleDateString(); // You can change this format
-      setDate(formattedDate);
-    }, []); // Empty dependency array to run once when the component mounts
+        const today = new Date();
+        const options = { weekday: 'short', year: 'numeric', month: 'numeric', day: 'numeric' };
+        const formattedDate = today.toLocaleDateString('en-GB', options);
+        setDate(formattedDate);
+    }, [])
 
     return (
         <div>
