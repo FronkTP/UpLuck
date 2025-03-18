@@ -6,6 +6,10 @@
     --color-accent-dark: #EF8354;
 }
 
+html{
+    overflow-x: hidden;
+}
+
 *,
 *::before,
 *::after {
@@ -25,6 +29,10 @@ button {
     border: none;
     border-radius: 20px;
     cursor: pointer;
+}
+
+li {
+    list-style-type: none;
 }
 
 /* Navigation section */
@@ -47,10 +55,6 @@ nav {
 .logo__img {
     width: auto;
     height: 7.5vh;
-}
-
-nav ul li {
-    list-style-type: none;
 }
 
 /* Hero section */
@@ -94,44 +98,80 @@ header h1 {
 
 /* Card slider section */
 
+.slider-container {
+    position: relative;
+    width: 95%;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.arrow-btn {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: transparent;
+border: none;
+cursor: pointer;
+z-index: 10;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.arrow-btn.left {
+left: -20px;
+}
+
+.arrow-btn.right {
+right: -20px;
+}
+
+.arrow {
+border: solid black;
+border-width: 0 3px 3px 0;
+display: inline-block;
+padding: 5px;
+}
+
+.right {
+transform: rotate(-22deg);
+-webkit-transform: rotate(-22deg);
+}
+
+.left {
+transform: rotate(67deg);
+-webkit-transform: rotate(67deg);
+}
+
+.slider {
+width: 100%;
+height: 100%;
+}
+
 .card_main{
     width: 300px;
+    margin: 20px 0;
     background: var(--color-primary-dark);
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    margin-top: 20px;
-    /* transition: background 0.3s ease-in-out; */
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
-/* hover effect to try */
-/* .card_main:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease-in-out;
-} */
-
-/* .card_main:hover {
-    box-shadow: 0 0 15px var(--color-primary-dark);
-    transition: box-shadow 0.3s ease-in-out;
-} */
-
-/* .card_main:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
-} */
-
-/* .card_main:hover {
+.card_main:hover,
+.card_main.selected {
     background: var(--color-accent-dark);
 }
 
-.card_main:hover .card_btn {
+.card_main:hover .card_btn,
+.card_main.selected .card_btn {
     background: var(--color-primary-dark);
     color: var(--color-light);
-} */
-
-/* s */
-
+}
 
 .card_img{
     width: 100%;
@@ -161,5 +201,17 @@ header h1 {
     margin: 0 auto;
     padding: 0.375em 1em;
     font-size: 1rem;
-    /* transition: background 0.3s ease-in-out, color 0.3s ease-in-out; */
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Main section */
+
+.fortune-nav {
+    padding: 1em 0;
+}
+
+.fortune-list {
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
 }
