@@ -6,6 +6,9 @@
     --color-accent-dark: #EF8354;
 }
 
+html{
+    overflow-x: hidden;
+}
 *,
 *::before,
 *::after {
@@ -158,3 +161,65 @@ header h1 {
     justify-content: space-around;
     cursor: pointer;
 }
+
+/* Ensure the container has a height and is positioned relatively */
+.slider-container {
+    position: relative;
+    width: 95%; /* You can adjust the width */
+    height: 400px; /* Set a height for the slider container */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style the arrow buttons */
+  .arrow-btn {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10; /* Make sure the buttons are on top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Position the left arrow button */
+  .arrow-btn.left {
+    left: -20px; /* Adjust as needed */
+  }
+  
+  /* Position the right arrow button */
+  .arrow-btn.right {
+    right: -20px; /* Adjust as needed */
+  }
+  
+  /* Style the arrow icon */
+  .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px; /* Make the arrow larger if needed */
+  }
+  
+  /* Right arrow rotation */
+  .right {
+    transform: rotate(-22deg);
+    -webkit-transform: rotate(-22deg);
+  }
+  
+  /* Left arrow rotation */
+  .left {
+    transform: rotate(67deg);
+    -webkit-transform: rotate(67deg);
+  }
+  
+  /* Ensure the slider is displayed and takes up full container height */
+  .slider {
+    width: 100%; /* Ensure it takes full width */
+    height: 100%; /* Ensure it takes the full height of the container */
+  }
+  
