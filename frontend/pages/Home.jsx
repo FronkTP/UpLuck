@@ -37,7 +37,6 @@ export default function Home() {
                 setSelectedCard={setSelectedCard}
                 target={targetRef}
             />
-            <FortuneNavbar onSelect={setSelected} selected={selected} />
             {renderComponent()}
         </>
     )
