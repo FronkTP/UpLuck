@@ -27,11 +27,7 @@ export default function SimpleSlider({ onSelect, selectedCard, setSelectedCard,t
       />
     );
   }
-
-
-
-
-  
+ 
   const settings = {
     className: "center",
     centerMode: true,
@@ -81,5 +77,4 @@ export default function SimpleSlider({ onSelect, selectedCard, setSelectedCard,t
       </div>
     </>
   );
-
 }

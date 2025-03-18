@@ -1,10 +1,8 @@
 import nikon from "../src/images/surprised_nikon.png"
-import { useRef } from "react"
-import { useEffect } from "react"
 
 export default function Hero({target}) {
     const handleScroll = (event) => {
-        event.preventDefault();  // Prevent page refresh
+        event.preventDefault();
 
         if (target.current) {
             target.current.scrollIntoView({ behavior: "smooth" });
