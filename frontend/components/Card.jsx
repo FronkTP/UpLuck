@@ -1,7 +1,7 @@
 export default function Card(props){
     return(
         <>
-        <div className="card_main">
+        <div className={`card_main ${props.isSelected ? 'selected' : ''}`}>
             <div className="card_margin">
                 <img src={props.img} className="card_img"/>
                 <div className="card_info">

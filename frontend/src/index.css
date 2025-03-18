@@ -27,6 +27,10 @@ button {
     cursor: pointer;
 }
 
+li {
+    list-style-type: none;
+}
+
 /* Navigation section */
 
 nav {
@@ -47,10 +51,6 @@ nav {
 .logo__img {
     width: auto;
     height: 7.5vh;
-}
-
-nav ul li {
-    list-style-type: none;
 }
 
 /* Hero section */
@@ -96,25 +96,22 @@ header h1 {
 
 .card_main{
     width: 300px;
+    margin: 20px 0;
     background: var(--color-primary-dark);
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    margin-top: 20px;
+    cursor: pointer;
     transition: background 0.3s ease-in-out;
 }
 
-
-/* .card_main:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
-} */
-
-.card_main:hover {
+.card_main:hover,
+.card_main.selected {
     background: var(--color-accent-dark);
 }
 
-.card_main:hover .card_btn {
+.card_main:hover .card_btn,
+.card_main.selected .card_btn {
     background: var(--color-primary-dark);
     color: var(--color-light);
 }
@@ -148,4 +145,16 @@ header h1 {
     padding: 0.375em 1em;
     font-size: 1rem;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Main section */
+
+.fortune-nav {
+    padding: 1em 0;
+}
+
+.fortune-list {
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
 }
