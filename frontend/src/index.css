@@ -246,6 +246,26 @@ header h1 {
     min-height: 450px;
 }
 
+.item-container h3,
+.map-container h3 {
+    font-size: 1.375em;
+    font-weight: 600;
+}
+
+.color-label,
+.item-container *,
+.map-container * {
+    font-size: 1.125rem;
+}
+
+.item-container,
+.map-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+}
+
 /* Daily horoscope */
 
 .horoscope {
@@ -289,28 +309,26 @@ header h1 {
     border: 1px solid black;
 }
 
-.color-label {
-    font-size: 1.25rem;
-}
-
 /* Lucky item */
 
+.item-img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25em;
+}
+
+.item-img-container p {
+    font-size: larger;
+}
+
+.item-img {
+    max-height: 350px;
+}
 
 /* Sacred map */
 
-.map-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3em;
-}
-
-.map-container h3 {
-    font-size: 1.375em;
-    font-weight: 600;
-}
-
 .map-container * {
-    font-size: 1.125rem;
     list-style-type: disc;
 }

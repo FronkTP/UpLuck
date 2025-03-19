@@ -38,10 +38,12 @@ export default function LuckyItem() {
     const [index, setIndex] = useState(0);
         
     useEffect(() => {
-        const today = new Date().toLocaleDateString('en-GB');
-        setDate(today);
+        const today = new Date();
+        const options = { day: "2-digit", month: "long", year: "numeric" };
+        const formattedDate = today.toLocaleDateString("th-TH", options);
+        setDate(formattedDate);
 
-        const dateHash = today.split('/').join(''); 
+        const dateHash = today.toLocaleDateString("en-GB").split('/').join('');
         const fixedIndex = parseInt(dateHash, 10) % items.length;
         setIndex(fixedIndex);
     }, []);
@@ -52,9 +54,19 @@ export default function LuckyItem() {
     
     return (
         <div>
-            <h2>Lucky Item</h2>
-            <p>Your lucky item for {date} is {items[index][0]}: {items[index][1]}</p>
-            <img src={imagePath} alt={items[index][0]} style={{ width: "150px", height: "150px", marginTop: "10px" }} />
+            <div className='fortune-header'>
+                <h2>ของนำโชคประจำวันที่ {date}</h2>
+            </div>
+            <div className='fortune-content item-container'>
+                <div className='item-img-container'>
+                    <img src={imagePath} alt={items[index][0]} className='item-img'/>
+                    <p>{items[index][0]}</p>
+                </div>
+                <div className='item-text-container'>
+                    <h3>{items[index][0]}</h3>
+                    <p>{items[index][1]}</p>
+                </div>
+            </div>
         </div>
     );
 }
