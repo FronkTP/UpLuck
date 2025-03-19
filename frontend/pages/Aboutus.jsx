@@ -24,7 +24,7 @@ export default function Aboutus(){
                     If you are by chance interested in our secret recipe, give us pi baht, with infinite decimal places accuracy. 
                     If you can't, then we have to keep it a secret, sadly.
                     <br></br>
-                    Nevertheless, we gaurantee that Upluck will up your luck and smoothen your uni's life!
+                    Nevertheless, we guarantee that Upluck will up your luck and smoothen your uni's life!
                 </p>
                 </div>
 
