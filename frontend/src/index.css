@@ -332,3 +332,12 @@ header h1 {
 .map-container * {
     list-style-type: disc;
 }
+
+/* Footer */
+
+footer {
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

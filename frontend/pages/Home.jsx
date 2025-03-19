@@ -5,7 +5,7 @@ import DailyHoroscope from "../components/DailyHoroscope";
 import ShirtColor from "../components/ShirtColor";
 import LuckyItem from "../components/LuckyItem";
 import SacredMap from "../components/SacredMap";
-import FortuneNavbar from "../components/FortuneNavbar";
+import Footer from '../components/Footer';
 import { useRef } from "react"
 
 export default function Home() {
@@ -38,6 +38,7 @@ export default function Home() {
                 target={targetRef}
             />
             <div className='fortune-main'>{renderComponent()}</div>
+            <Footer/>
         </>
     )
 }

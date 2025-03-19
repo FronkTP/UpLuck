@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar.jsx"
+import Footer from "../components/Footer.jsx"
 import "../pages/AboutusCSS.css"
 import absolute_cinema from "../src/images/absolute_cinema.jpeg"
 
@@ -29,7 +30,7 @@ export default function Aboutus(){
 
                 <img src={absolute_cinema} alt="peak" class="peak_img"/>
             </div>
-            
+            <Footer/>
         </>
     )
     
