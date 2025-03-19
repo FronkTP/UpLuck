@@ -81,7 +81,6 @@ export default function DailyHoroscope() {
     const [date, setDate] = useState('');
     const [index, setIndex] = useState(0);
 
-    
     useEffect(() => {
         const today = new Date().toLocaleDateString('en-GB');
         setDate(today);
@@ -119,8 +118,6 @@ export default function DailyHoroscope() {
         <div>
             <h2>Daily Horoscope</h2>
             <p>Your daily horoscope for {date} is {horoscopeList[index]}.</p>
-            
-            
         </div>
     );
 }
