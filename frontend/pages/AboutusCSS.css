@@ -1,8 +1,29 @@
+:root {
+    --color-light: #F8F8F8;
+    --color-primary: #4F5D75;
+    --color-primary-dark: #2D3142;
+    --color-accent: #ffd8be;
+    --color-accent-dark: #EF8354;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Mitr", sans-serif;
+}
+
+.main {
+    padding: 4% 0;
+    background-color: var(--color-accent);
+}
+
 .questions {
     text-align: center;
-    color: darkgoldenrod;
+    color: var(--color-accent-dark);
     font-size: 40px;
-    margin-top: 4%;
 }
 
 .peak_img {
@@ -14,8 +35,8 @@
 .answers {
     text-align: center;
     font-size: 20px;
-    color: rgb(142, 101, 71);
+    color: var();
     padding-left: 10%;
     padding-right: 10%;
-    margin-bottom: 4%;
+    margin-bottom: 1em;
 }
