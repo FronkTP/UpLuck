@@ -9,7 +9,8 @@ export default function Navbar() {
                 <h1 className='logo__text'>UpLuck</h1>
             </div></a>
             <ul>
-                <Link to ='/about-us'><li>About Us</li></Link>
+                <Link to ='/about-us' style={{ fontSize: "20px"}}>
+                <li>About Us</li></Link>
                 
             </ul>
         </nav>
