@@ -18,10 +18,10 @@ export default function SimpleSlider({ onSelect, selectedCard, setSelectedCard,t
   };
 
   const cards = [
-      { id: 'dailyhoroscope', title: 'Daily Horoscope', desc: 'Your daily horoscope preview', img: '../src/images/surprised_nikon.png' },
-      { id: 'shirtcolor', title: 'Lucky Shirt Colour', desc: 'Discover your lucky colour', img: '../src/images/surprised_nikon.png' },
-      { id: 'luckyitem', title: 'Lucky Item', desc: 'Find out your lucky item', img: '../src/images/surprised_nikon.png' },
-      { id: 'sacredmap', title: 'Sacred Map', desc: 'Unveil your sacred map', img: '../src/images/surprised_nikon.png' },
+      { id: 'dailyhoroscope', title: 'ดวงประจำวัน', desc: 'เข้ามาดูดวงประจำวันของคุณได้เลย!', img: '../src/images/surprised_nikon.png' },
+      { id: 'shirtcolor', title: 'สีเสื้อมงคล', desc: 'วันนี้ใส่เสื้อสีอะไรดีนะ?', img: '../src/images/surprised_nikon.png' },
+      { id: 'luckyitem', title: 'ของนำโชค', desc: 'วันนี้พกอะไรออกจากบ้านดีนะ?', img: '../src/images/surprised_nikon.png' },
+      { id: 'sacredmap', title: 'แผนที่สถานที่ศักดิ์สิทธิ์', desc: 'ตามหาสถานที่ศักดิ์สิทธิ์กัน!', img: '../src/images/surprised_nikon.png' },
   ];
 
   return (

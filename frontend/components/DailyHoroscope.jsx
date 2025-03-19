@@ -82,42 +82,55 @@ export default function DailyHoroscope() {
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
-        const today = new Date().toLocaleDateString('en-GB');
-        setDate(today);
+        const today = new Date();
+        const options = { day: "2-digit", month: "long", year: "numeric" };
+        const formattedDate = today.toLocaleDateString("th-TH", options);
+        setDate(formattedDate);
 
-        
-        const dateHash = today.split('/').join(''); 
+        const dateHash = today.toLocaleDateString("en-GB").split('/').join(''); 
         const fixedIndex = parseInt(dateHash, 10) % horoscopeList.length;
         setIndex(fixedIndex);
-    }, []);
+    }, []);    
     
-    /*
-    code for button to check horoscope for next day (test)
-    const [simulatedDate, setSimulatedDate] = useState(new Date());
-    const [index, setIndex] = useState(0);
-    useEffect(() => {
-        const formattedDate = simulatedDate.toLocaleDateString('en-GB');  
-        const dateHash = formattedDate.split('/').join('');
-        const fixedIndex = parseInt(dateHash, 10) % horoscopeList.length;
-        setIndex(fixedIndex);
-    }, [simulatedDate]); // Run effect whenever the simulated date changes
+    // // code for button to check horoscope for next day (test)
+    // const [simulatedDate, setSimulatedDate] = useState(new Date());
+    // const [index, setIndex] = useState(0);
+    // useEffect(() => {
+    //     const formattedDate = simulatedDate.toLocaleDateString('en-GB');  
+    //     const dateHash = formattedDate.split('/').join('');
+    //     const fixedIndex = parseInt(dateHash, 10) % horoscopeList.length;
+    //     setIndex(fixedIndex);
+    // }, [simulatedDate]); // Run effect whenever the simulated date changes
 
-    // Function to increase the date
-    const goToNextDay = () => {
-        setSimulatedDate(prevDate => {
-            const newDate = new Date(prevDate);
-            newDate.setDate(newDate.getDate() + 1);
-            return newDate;
-        });
-    };
-    <button onClick={goToNextDay}>Next Day</button>
-    simulatedDate.toLocaleDateString('en-GB') instead {date}
-    */
+    // // Function to increase the date
+    // const goToNextDay = () => {
+    //     setSimulatedDate(prevDate => {
+    //         const newDate = new Date(prevDate);
+    //         newDate.setDate(newDate.getDate() + 1);
+    //         return newDate;
+    //     });
+    // };
+
+    // const goToPreviousDay = () => {
+    //     setSimulatedDate(prevDate => {
+    //         const newDate = new Date(prevDate);
+    //         newDate.setDate(newDate.getDate() - 1);
+    //         return newDate;
+    //     });
+    // };
+    // // simulatedDate.toLocaleDateString('en-GB') instead {date}
+    
 
     return (
-        <div>
-            <h2>Daily Horoscope</h2>
-            <p>Your daily horoscope for {date} is {horoscopeList[index]}.</p>
-        </div>
+        <>
+            <div className='fortune-header'>
+                <h2>ดวงประจำวันที่ {date}</h2>
+            </div>
+            <div className='fortune-content horoscope'>
+                <p>{horoscopeList[index]}</p>
+            </div>
+            {/* <button onClick={goToPreviousDay} style={{height: '100px', width: '100vw'}}>Previous Day</button>
+            <button onClick={goToNextDay} style={{height: '100px', width: '100vw'}}>Next Day</button> */}
+        </>
     );
 }

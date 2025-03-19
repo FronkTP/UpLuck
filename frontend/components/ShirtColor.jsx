@@ -4,30 +4,41 @@ export default function ShirtColor() {
     //การงาน การเงิน ความรัก โชคลาภ กาลกิณี
     //Sunday Monday Tuesday Wednesday Thursday Friday Saturday
     const days_of_week = [
-    ["เขียว ฟ้า", "แดง", "ดำ เทา เขียว", "ชมพู", "น้ำเงิน"], 
-    ["น้ำเงิน ฟ้า", "ม่วง", "ชมพู ม่วง น้ำเงิน", "เขียว", "แดง"],  
-    ["ส้ม ชมพู", "เหลือง ทอง", "แดง ส้ม", "เทา ดำ", "ขาว"],  
+    ["เขียว ฟ้า", "แดง", "เขียว เทา ดำ", "ชมพู", "น้ำเงิน"], 
+    ["ฟ้า น้ำเงิน", "ม่วง", "ชมพู ม่วง น้ำเงิน", "เขียว", "แดง"],  
+    ["ส้ม ชมพู", "เหลือง ทอง", "ส้ม แดง", "เทา ดำ", "ขาว"],  
     ["เหลือง ครีม", "เขียว", "ดำ ครีม", "น้ำเงิน ฟ้า", "ชมพู"],  
-    ["ทอง ขาว", "น้ำเงิน ฟ้า", "ฟ้า ส้ม แดง", "แดง ชมพู", "ม่วง"],  
-    ["เขียว", "น้ำเงิน ฟ้า", "ฟ้า ชมพู แดง", "ขาว ครีม", "เทา ดำ"],  
-    ["แดง", "ส้ม ทอง", "ดำ เทา เขียว", "ม่วง ดำ", "เขียว"]]
+    ["ทอง ขาว", "ฟ้า น้ำเงิน", "ฟ้า ส้ม แดง", "ชมพู แดง", "ม่วง"],  
+    ["เขียว", "ฟ้า น้ำเงิน", "ฟ้า ชมพู แดง", "ขาว ครีม", "เทา ดำ"],  
+    ["แดง", "ส้ม ทอง", "เขียว เทา ดำ", "ม่วง ดำ", "เขียว"]]
+
+    const ThaiDaysMapping = {
+        "Sunday": "อาทิตย์",
+        "Monday": "จันทร์",
+        "Tuesday": "อังคาร",
+        "Wednesday": "พุธ",
+        "Thursday": "พฤหัสบดี",
+        "Friday": "ศุกร์",
+        "Saturday": "เสาร์"
+    };
+    
     const [date, setDate] = useState('');
     const [weekday, setWeekday] = useState('');
     //const [selectedDay, setSelectedDay] = useState(''); testing other day
 
     useEffect(() => {
         const today = new Date();
-        const options = { weekday: 'short', year: 'numeric', month: 'numeric', day: 'numeric' };
-        const formattedDate = today.toLocaleDateString('en-GB', options);
-        const onlyday  = today.toLocaleDateString('en-GB',{weekday:'short'})
+        const options = { day: "2-digit", month: "long", year: "numeric" };
+        const formattedDate = today.toLocaleDateString("th-TH", options);
         setDate(formattedDate);
-        setWeekday(onlyday)
+        const englishWeekday = today.toLocaleDateString("en-US", { weekday: "long" });
+        setWeekday(ThaiDaysMapping[englishWeekday]); 
         //setSelectedDay(onlyday); testing other day
     }, [])
 
     function shirtcolour(weekday) {
         const daysMapping = {
-            "Sun": 0, "Mon": 1, "Tue": 2, "Wed": 3, "Thu": 4, "Fri": 5, "Sat": 6
+            "อาทิตย์": 0, "จันทร์": 1, "อังคาร": 2, "พุธ": 3, "พฤหัสบดี": 4, "ศุกร์": 5, "เสาร์": 6
         };
         const index = daysMapping[weekday];
         return index !== undefined ? days_of_week[index] : "impossible";
@@ -40,30 +51,31 @@ export default function ShirtColor() {
     };
     */
 
-    return (
-        <div>
-            <h2>Shirt Color</h2>
-            <p>Your daily lucky shirt for {date} is </p>
-            {/*
-            <label htmlFor="day-select">Select a Day: </label>
-            <select id="day-select" value={selectedDay} onChange={handleDayChange}>
-                <option value="Sun">Sunday</option>
-                <option value="Mon">Monday</option>
-                <option value="Tue">Tuesday</option>
-                <option value="Wed">Wednesday</option>
-                <option value="Thu">Thursday</option>
-                <option value="Fri">Friday</option>
-                <option value="Sat">Saturday</option>
-            </select>
-            */}
+    const colorMappings = {
+        "เขียว": "green", "ฟ้า": "skyblue", "แดง": "red", "ดำ": "black", "เทา": "gray", 
+        "ชมพู": "pink", "น้ำเงิน": "blue", "ส้ม": "orange", "เหลือง": "yellow", "ทอง": "gold", 
+        "ขาว": "white", "ครีม": "beige", "ม่วง": "purple"
+    };
 
-            <ul>
-                <li>For การงาน : {resultofshirt[0]}</li>
-                <li>For การเงิน : {resultofshirt[1]}</li>
-                <li>For ความรัก : {resultofshirt[2]}</li>
-                <li>For โชคลาภ : {resultofshirt[3]}</li>
-                <li>For กาลกิณี : {resultofshirt[4]}</li>
-            </ul>
-        </div>
+    return (
+        <>
+            <div className="fortune-header">
+                    <h2>สีเสื้อมงคลประจำวัน{weekday}ที่ {date}</h2>
+            </div>
+            <div className="fortune-content shirt-content">
+                <div className='shirt-container'>
+                    {['การงาน', 'การเงิน', 'ความรัก', 'โชคลาภ', 'กาลกิณี'].map((category, index) => (
+                        <div className="shirt-category" key={index}>
+                            <div className="color-container">
+                                {resultofshirt[index].split(' ').map((color, i) => (
+                                    <div key={i} className="color-circle" style={{ backgroundColor: colorMappings[color] || 'gray' }}></div>
+                                ))}
+                            </div>
+                            <p className='color-label'>{category}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </>
     );
 }

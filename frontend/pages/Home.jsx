@@ -37,7 +37,7 @@ export default function Home() {
                 setSelectedCard={setSelectedCard}
                 target={targetRef}
             />
-            {renderComponent()}
+            <div className='fortune-main'>{renderComponent()}</div>
         </>
     )
 }
