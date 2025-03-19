@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function ShirtColor() {
     //การงาน การเงิน ความรัก โชคลาภ กาลกิณี
-    //Sunday Monday Tuesday Wednesday Thursday 
+    //Sunday Monday Tuesday Wednesday Thursday Friday Saturday
     const days_of_week = [
     ["เขียว ฟ้า", "แดง", "ดำ เทา เขียว", "ชมพู", "น้ำเงิน"], 
     ["น้ำเงิน ฟ้า", "ม่วง", "ชมพู ม่วง น้ำเงิน", "เขียว", "แดง"],  
