@@ -1,0 +1,21 @@
+.questions {
+    text-align: center;
+    color: darkgoldenrod;
+    font-size: 40px;
+    margin-top: 4%;
+}
+
+.peak_img {
+    display: block; /* Make the image a block element */
+    margin: 0 auto; /* Center it horizontally */
+    width: 300px;   /* Adjust the image size */
+  }
+
+.answers {
+    text-align: center;
+    font-size: 20px;
+    color: rgb(142, 101, 71);
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 4%;
+}
