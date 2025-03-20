@@ -49,7 +49,7 @@ export default function LuckyItem() {
     }, []);
 
     const imageName = items[index][0].toLowerCase().replace(/\s+/g, '') + ".jpg";
-    const imagePath = `../src/images/${imageName}`;
+    const imagePath = `/images/${imageName}`;
     
     
     return (
