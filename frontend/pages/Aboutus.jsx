@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar.jsx"
 import Footer from "../components/Footer.jsx"
 import "../pages/AboutusCSS.css"
-import absolute_cinema from "../src/images/absolute_cinema.jpeg"
+import absolute_cinema from "/images/absolute_cinema.jpeg"
 
 export default function Aboutus(){
     return (

@@ -1,4 +1,4 @@
-import nikon from "../src/images/surprised_nikon.png"
+import nikon from "/images/surprised_nikon.png"
 
 export default function Hero({target}) {
     const handleScroll = (event) => {
