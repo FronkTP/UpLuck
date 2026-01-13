@@ -1,12 +1,74 @@
-# React + Vite
+# UpLuck
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite single-page app for quick daily “fortune” content: daily horoscope, lucky shirt colours, a lucky item suggestion, and a sacred places map.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Daily Horoscope**: deterministic daily message based on today’s date.
+- **Lucky Shirt Colour**: recommended colours by weekday (Thai locale).
+- **Lucky Item**: deterministic daily item + description (shows a matching image).
+- **Sacred Map**: embedded Google My Maps of sacred locations.
 
-## Expanding the ESLint configuration
+## Tech stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19 + Vite 6
+- React Router DOM
+- MUI + Emotion (installed)
+- `react-slick` / `slick-carousel` for the carousel
+- ESLint
+
+## Getting started
+
+From the `frontend/` folder:
+
+```bash
+npm install
+npm run dev
+```
+
+Open the URL shown in the terminal (usually `http://localhost:5173`).
+
+## Scripts
+
+- `npm run dev` — start dev server
+- `npm run build` — production build
+- `npm run preview` — preview the build locally
+- `npm run lint` — run ESLint
+
+## Project structure
+
+```
+frontend/
+	components/        # UI building blocks
+	pages/             # Route pages (Home, About Us)
+	public/images/     # Static images served at /images/...
+	src/
+		App.jsx          # Route definitions
+		main.jsx         # React entry + BrowserRouter
+		index.css        # Global styles
+```
+
+Key files:
+
+- App routes: `src/App.jsx`
+- Home composition: `pages/Home.jsx`
+
+## Adding / fixing Lucky Item images
+
+`components/LuckyItem.jsx` builds an image path from the item name:
+
+1. Lowercases the Thai/English item name
+2. Removes spaces
+3. Appends `.jpg`
+
+Images must exist in `public/images/` and be reachable as `/images/<name>.jpg`.
+
+Example: item name `Power Bank` → `/images/powerbank.jpg`.
+
+## Deployment
+
+Build output goes to `dist/`:
+
+```bash
+npm run build
+```
